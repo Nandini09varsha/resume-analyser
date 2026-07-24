@@ -1,0 +1,17 @@
+// 4 layers
+
+// UI
+// =>component
+// =>pages
+
+// hook
+// =>for managing state and api
+// =>hooks
+
+// state=> data store
+// => auth.context.jsx 
+// =>ai.context.jsx 
+
+// Api => for communication with backend
+// =>services 
+//      => auth.api.js
