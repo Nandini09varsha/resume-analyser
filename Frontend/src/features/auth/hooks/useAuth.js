@@ -32,20 +32,36 @@ export const useAuth = () => {
 
   const handleLogout = async () => {
     setLoading(true);
+
     try {
-      const data = await logout();
+      await logout();
       setUser(null);
+      return true;
     } catch (err) {
+      console.error(err);
+      return false;
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
+    console.log("🔥 useEffect started");
     const getAndSetUser = async () => {
-      const data = await getMe();
-      setUser(data.user);
-      setLoading(false);
+      try {
+        console.log("📤 Calling getMe()");
+        const data = await login({ email, password });
+        console.log("✅ getMe response:", data);
+
+        console.log("LOGIN RESPONSE:");
+        console.log(data);
+
+        setUser(data.user);
+      } catch (err) {
+        console.log("❌ getMe failed:", err);
+      } finally {
+        setLoading(false);
+      }
     };
 
     getAndSetUser();

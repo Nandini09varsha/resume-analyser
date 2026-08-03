@@ -41,11 +41,25 @@ export async function logout() {
   }
 }
 
+// export async function getMe() {
+//   try {
+//     const response = await api.get("/api/auth/get-me", {});
+//     return response.data;
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
 export async function getMe() {
   try {
-    const response = await api.get("/api/auth/get-me", {});
+    const response = await api.get("/api/auth/get-me");
+
+    console.log("GETME RESPONSE:", response);
+    console.log("GETME DATA:", response.data);
+
     return response.data;
   } catch (err) {
-    console.log(err);
+    console.log("GETME ERROR:", err);
+    throw err;
   }
 }

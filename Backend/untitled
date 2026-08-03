@@ -1,0 +1,103 @@
+{
+  "matchScore": 88,
+  "technicalQuestions": [
+    {
+      "question": "Explain the Node.js event loop and how it handles asynchronous operations.",
+      "intention": "To assess the candidate's core understanding of Node.js architecture and non-blocking I/O.",
+      "answer": "The candidate should explain the phases of the event loop (timers, pending callbacks, idle, poll, check, close). They should mention the role of the Libuv library and how the thread pool handles blocking tasks while the main thread remains free for incoming requests."
+    },
+    {
+      "question": "You mentioned optimizing MongoDB queries to improve response time by 35%. What specific steps did you take?",
+      "intention": "To verify the candidate's practical experience with database performance tuning.",
+      "answer": "Focus on identifying slow queries using the explain() method, implementing appropriate indexing (single, compound, or multikey), avoiding large 'skip' operations, and projecting only necessary fields to reduce payload size."
+    },
+    {
+      "question": "How do you secure a REST API built with Express.js and JWT?",
+      "intention": "To evaluate the candidate's knowledge of security best practices.",
+      "answer": "Cover points like using HTTPS, storing JWTs in HTTP-only cookies to prevent XSS, implementing rate limiting, validating input using libraries like Joi or Zod, and using middleware to check for authorized roles/permissions."
+    },
+    {
+      "question": "How would you handle a high volume of write operations in MongoDB without crashing the application?",
+      "intention": "To test understanding of scalability and system design fundamentals.",
+      "answer": "Discuss concepts like vertical scaling vs. horizontal scaling (sharding), implementing a message queue (like RabbitMQ or Kafka) to buffer writes, or using bulk write operations to minimize network round trips."
+    }
+  ],
+  "behavioralQuestions": [
+    {
+      "question": "Describe a time you had a technical disagreement with a frontend developer. How did you resolve it?",
+      "intention": "To check team collaboration and communication skills.",
+      "answer": "Use the STAR method. Focus on how you used documentation (like Swagger/Postman) or clear communication to align on API contracts, ensuring both parties reached a solution that benefited the product."
+    },
+    {
+      "question": "Tell me about a challenging bug you faced in your Resume Analyzer project and how you solved it.",
+      "intention": "To assess problem-solving ability and persistence.",
+      "answer": "Describe the issue (e.g., PDF parsing errors or API rate limits), the debugging process (logs, testing tools), and the final implementation that fixed the issue."
+    }
+  ],
+  "skillGaps": [
+    {
+      "skill": "Redis",
+      "severity": "high"
+    },
+    {
+      "skill": "Advanced System Design",
+      "severity": "medium"
+    },
+    {
+      "skill": "CI/CD Pipelines",
+      "severity": "medium"
+    },
+    {
+      "skill": "Advanced Docker/Containerization",
+      "severity": "low"
+    }
+  ],
+  "preparationPlan": [
+    {
+      "day": 1,
+      "focus": "Node.js Internals and Express.js",
+      "tasks": [
+        "Review Event Loop, Streams, and Buffer modules in Node.js.",
+        "Practice building custom middleware for error handling and logging in Express.",
+        "Read about Node.js child processes and worker threads."
+      ]
+    },
+    {
+      "day": 2,
+      "focus": "Database Mastery (MongoDB)",
+      "tasks": [
+        "Study MongoDB Indexing strategies (Compound, TTL, Text).",
+        "Practice writing complex Aggregation Framework queries.",
+        "Learn about MongoDB transactions and ACID compliance."
+      ]
+    },
+    {
+      "day": 3,
+      "focus": "Security and Caching",
+      "tasks": [
+        "Deep dive into JWT best practices (Refresh tokens, rotation).",
+        "Learn basic Redis commands and implementation for API caching.",
+        "Implement rate limiting using 'express-rate-limit'."
+      ]
+    },
+    {
+      "day": 4,
+      "focus": "System Design and DevOps Basics",
+      "tasks": [
+        "Study Load Balancing, Horizontal Scaling, and Microservices architecture basics.",
+        "Review Dockerizing a MERN application using Docker Compose.",
+        "Understand the basics of AWS EC2 and S3 deployment."
+      ]
+    },
+    {
+      "day": 5,
+      "focus": "Soft Skills and Mock Interviews",
+      "tasks": [
+        "Prepare STAR method answers for common behavioral questions.",
+        "Conduct a mock technical interview focusing on explaining past projects.",
+        "Review the job description to align project experience with company needs."
+      ]
+    }
+  ],
+  "title": "Backend Developer (Node.js)"
+}
