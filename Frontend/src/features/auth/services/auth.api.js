@@ -34,32 +34,19 @@ export async function login({ email, password }) {
 
 export async function logout() {
   try {
-    const response = await api.get("/api/auth/logout", {});
+    const response = await api.get("/api/auth/logout");
     return response.data;
   } catch (err) {
     console.log(err);
   }
 }
 
-// export async function getMe() {
-//   try {
-//     const response = await api.get("/api/auth/get-me", {});
-//     return response.data;
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
-
 export async function getMe() {
   try {
     const response = await api.get("/api/auth/get-me");
 
-    console.log("GETME RESPONSE:", response);
-    console.log("GETME DATA:", response.data);
-
     return response.data;
   } catch (err) {
-    console.log("GETME ERROR:", err);
-    throw err;
+    console.log(err);
   }
 }
