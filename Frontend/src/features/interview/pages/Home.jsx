@@ -1,7 +1,10 @@
-import React, { useState, useRef } from "react";
+import { Brain, LogOut } from "lucide-react";
+import { useState, useRef } from "react";
 import "../style/home.scss";
+
 import { useInterview } from "../hooks/useInterview.js";
 import { useNavigate } from "react-router";
+import { useAuth } from "../../auth/hooks/useAuth";
 
 const Home = () => {
   const { loading, generateReport, reports } = useInterview();
@@ -9,6 +12,7 @@ const Home = () => {
   const [selfDescription, setSelfDescription] = useState("");
   const resumeInputRef = useRef();
 
+  const { handleLogout } = useAuth();
   const navigate = useNavigate();
 
   const handleGenerateReport = async () => {
@@ -29,8 +33,26 @@ const Home = () => {
     );
   }
 
+  const logoutUser = async () => {
+    const success = await handleLogout();
+
+    if (success) {
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="home-page">
+      <header className="top-navbar">
+        <div className="brand">
+          <Brain className="brand__icon" size={24} />
+          <span>CareerPilot</span>
+        </div>
+
+        <button className="logout-button" onClick={logoutUser} title="Logout">
+          <LogOut size={20} />
+        </button>
+      </header>
       {/* Page Header */}
       <header className="page-header">
         <h1>
